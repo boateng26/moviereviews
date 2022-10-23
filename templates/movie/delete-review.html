@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="card mt-3">
+            <div class="card-body pt-5">
+             
+                <h5 class="card-title">Are you sure you want to delete review</h5>
+                <form action="" method="post">
+                    {%csrf_token%}
+                    {{form.as_p}}
+                    <button type="submit" class="btn btn-primary">Yes</button>
+                    <a href="{%url 'movie:movie-detail' review.movie.id %}" class="btn btn-danger" type="submit">Cancel</a>
+                    
+                </form>   
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+   
+  </div>
+{% endblock content %}
